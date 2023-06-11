@@ -32319,6 +32319,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   m_PrefabInstance: {fileID: 1968153581}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1516970938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1968153581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1516970939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32331,11 +32336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19aae7373a55429787265ebd7470160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   horsePower: 100
   centreOfMass: {fileID: 262441200}
-=======
->>>>>>> parent of 65e73d3 (Commit007 - Motion of the car improved)
 --- !u!1 &1519672885
 GameObject:
   m_ObjectHideFlags: 0

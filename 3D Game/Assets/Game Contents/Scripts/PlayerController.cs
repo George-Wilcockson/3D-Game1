@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Private variables
-    private float speed = 15.0f;
-    private float turnSpeed = 35.0f;
+    // private float speed = 15.0f; No longer needed as using forces
+    private float turnSpeed = 70.0f;
     private float horizontalInput;
     private float forwardInput;
 
     // Making the car use forces to look realistic
     [SerializeField] private float horsePower = 10000;
     private Rigidbody playerRB;
+    [SerializeField] GameObject centreOfMass;
+
 
 
     // Start is called before the first frame update
