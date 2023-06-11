@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRB;
     [SerializeField] GameObject centreOfMass;
 
+    // List of wheel colliders to check if they are on the ground
+    [SerializeField] List<WheelCollider> allWheels;
+    [SerializeField] int wheelsOnGround;
 
 
     // Start is called before the first frame update
@@ -33,9 +36,33 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        // Move the vehicle
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
-        playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+        if (IsOnGround())
+        {
+            // Move the vehicle
+            //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+            transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+            playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+        }
+    }
+
+    // checks if all wheels are on ground to then make determine if driver inout can be accepted
+    bool IsOnGround()
+    {
+        wheelsOnGround = 0;
+        foreach (WheelCollider wheel in allWheels)
+        {
+            if (wheel.isGrounded)
+            {
+                wheelsOnGround++;
+            }
+        }
+        if (wheelsOnGround >= 2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

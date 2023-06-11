@@ -9903,6 +9903,11 @@ Transform:
   m_Father: {fileID: 1842715857}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &457556243 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 1057494946909100755, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1968153581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &459612300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21062,6 +21067,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 494338, guid: ea8ec36c7f9b40f4faa40bf80afec5a3, type: 3}
   m_PrefabInstance: {fileID: 1001426152}
   m_PrefabAsset: {fileID: 0}
+--- !u!146 &1001935473 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 3145262460232535540, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1968153581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003467302
 GameObject:
   m_ObjectHideFlags: 0
@@ -23301,6 +23311,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 51f7d944b367bb94abd599e0af5cf265, type: 3}
   m_PrefabInstance: {fileID: 1096377423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &1097166183 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 4795950753765878369, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1968153581}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1103610790
 PrefabInstance:
@@ -27578,6 +27593,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 494338, guid: ea8ec36c7f9b40f4faa40bf80afec5a3, type: 3}
   m_PrefabInstance: {fileID: 1311571155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &1312077565 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 2716459193614891142, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1968153581}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314103248
 PrefabInstance:
@@ -32338,6 +32358,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horsePower: 35000
   centreOfMass: {fileID: 262441200}
+  allWheels:
+  - {fileID: 1312077565}
+  - {fileID: 1097166183}
+  - {fileID: 1001935473}
+  - {fileID: 457556243}
+  wheelsOnGround: 0
 --- !u!1 &1519672885
 GameObject:
   m_ObjectHideFlags: 0
