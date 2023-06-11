@@ -3,21 +3,29 @@ using UnityEngine;
 public class CameraFollow1 : MonoBehaviour
 {
     // The player to follow
-    public Transform target;
+    public GameObject target = null;
+    // The target view
+    public GameObject t = null;
 
-    // The slight camera delay for nice effect
-    public float smoothSpeed;
+    // Speed of camera
+    public float speed = 1.5f;
 
-    // Where to wtach from
-    public Vector3 offset; //= new Vector3(0.0f, 2.7f, -5.2f);
+    // For camera switching later on
+    public int index;
+
+
+    private void Start()
+    {
+        // Sets the right objects to be used
+        target = GameObject.FindGameObjectWithTag("Player");
+        t = GameObject.FindGameObjectWithTag("Target");
+
+    }
 
     private void FixedUpdate()
     {
-        Vector3 desiredPos = target.position + offset;
-        Vector3 smoothedPos = Vector3.Lerp(transform.position, desiredPos, smoothSpeed);
-
-        transform.position = smoothedPos;
-
-        transform.LookAt(target);
+        this.transform.LookAt(target.transform);
+        float car_move = Mathf.Abs(Vector3.Distance(this.transform.position, t.transform.position) * speed);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, t.transform.position, car_move * Time.deltaTime);
     }
 }
