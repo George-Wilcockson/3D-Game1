@@ -10,20 +10,28 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
 
+    // Making the car use forces to look realistic
+    [SerializeField] private float horsePower = 10000;
+    private Rigidbody playerRB;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        playerRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Get the player input
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        // Move Forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        // Move the vehicle
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
+        playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
     }
 }
