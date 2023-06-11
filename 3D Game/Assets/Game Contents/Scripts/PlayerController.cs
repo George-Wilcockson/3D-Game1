@@ -19,9 +19,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+<<<<<<< HEAD
 
         // Set the centre of mass of the rigid body to be where we put one on the vehicle
         // playerRB.centerOfMass = centreOfMass.transform.localPosition;
+=======
+>>>>>>> parent of 65e73d3 (Commit007 - Motion of the car improved)
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
 
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
         playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
     }
 }
