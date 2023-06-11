@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<WheelCollider> allWheels;
     [SerializeField] int wheelsOnGround;
 
+    // have the car jump, to be changed tojump on impact with a certain box
+    public float jumpForce = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,12 @@ public class PlayerController : MonoBehaviour
             //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
             transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
             playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+        }
+
+        // Make the car jump for a fun effect
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRB.velocity = new Vector3(playerRB.velocity.x, jumpForce, playerRB.velocity.z);
         }
     }
 
