@@ -28,7 +28,7 @@ public class EnemySpawnManager : MonoBehaviour
         enemyCount++;
         yield return new WaitForSeconds(interval);
 
-        if (enemyCount <= 6)
+        if (enemyCount <= maxEnemies)
         {
             GameObject newEnemy = Instantiate(enemy, player.transform.position - offset, player.transform.rotation);
             StartCoroutine(SpawnEnemy(interval, enemy));
