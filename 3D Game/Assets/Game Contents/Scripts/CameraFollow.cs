@@ -8,7 +8,9 @@ public class CameraFollow : MonoBehaviour
     public GameObject t = null;
 
     // Speed of camera
-    public float speed = 1.5f;
+    public float speed = 10.5f;
+
+    public float testFactor = 10.0f;
 
     // For camera switching later on
     public int index;
@@ -25,7 +27,7 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         this.transform.LookAt(target.transform);
-        float car_move = Mathf.Abs(Vector3.Distance(this.transform.position, t.transform.position) * speed);
+        float car_move = Mathf.Abs(Vector3.Distance(this.transform.position, t.transform.position) * speed * testFactor);
         this.transform.position = Vector3.MoveTowards(this.transform.position, t.transform.position, car_move * Time.deltaTime);
     }
 }
