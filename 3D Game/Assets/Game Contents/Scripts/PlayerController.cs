@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     // have the car jump, to be changed tojump on impact with a certain box
     public float jumpForce = 10;
 
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
