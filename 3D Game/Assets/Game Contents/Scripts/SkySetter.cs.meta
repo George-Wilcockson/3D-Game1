@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 611be8e82a3b9450db31f32951330228
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - daySky: {fileID: 2100000, guid: 2fdc1726342f4a749a190a0a8677a1a2, type: 2}
+  - nightSky: {fileID: 2100000, guid: 102c3f2cfdcb3d64199f97f4f9aa3d46, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
