@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Game Contents/Scenes/HomeMenu.unity
+    guid: 4640385f6e8cc429ebb2704087f98fb8
+  - enabled: 1
+    path: Assets/Game Contents/Scenes/CityDriveScene.unity
+    guid: 8d68a8c139112ee4387ec230ac89a4a2
   m_configObjects: {}
