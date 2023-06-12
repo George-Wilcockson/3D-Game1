@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemyCarController : MonoBehaviour
 {
-    float speed = 1000.0f;
     private Rigidbody enemyRB;
     private GameObject player;
-    private float turnSpeed = 70.0f;
-    private float horizontalDirectionalPower = 1.0f;
-    private float forwardDirectionalPower = 1.0f;
+    private float forwardDirectionalPower = 100.0f;
     [SerializeField] private float horsePower = 2500;
 
     // Start is called before the first frame update
@@ -34,9 +31,9 @@ public class EnemyCarController : MonoBehaviour
 
     void MoveEnemy(Vector3 lookDirection)
     {
-        // Rotate about y-axis, 
-        // transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalDirectionalPower);
         RotateTowardsEnemy();
+
+        // Move towards enemy
         enemyRB.AddRelativeForce(Vector3.forward * horsePower * forwardDirectionalPower);
     }
 
