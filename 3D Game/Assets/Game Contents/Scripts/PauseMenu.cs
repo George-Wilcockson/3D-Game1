@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f; // Continues in background in slow mo
@@ -40,6 +40,16 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0.0f; // Continues in background in slow mo
 
         gamePaused = true;
+    }
+
+    public void LoadMenu()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
     }
 
 }
