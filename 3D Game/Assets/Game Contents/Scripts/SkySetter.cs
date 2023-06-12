@@ -6,13 +6,19 @@ public class SkySetter : MonoBehaviour
 {
     public Material daySky;
     public Material nightSky;
+    public bool dayClicked = false;
 
-    private void DaySkySet()
+    public void SetTheSky()
+    {
+        if(dayClicked)  { DaySkySet();}
+        else { NightSkySet(); }
+    }
+    public void DaySkySet()
     {
         RenderSettings.skybox = daySky;
     }
 
-    private void NightSkySet()
+    public void NightSkySet()
     {
         RenderSettings.skybox = nightSky;
     }
