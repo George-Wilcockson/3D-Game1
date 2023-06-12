@@ -5,11 +5,15 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
     [SerializeField] public GameObject enemyPrefab;
-    [SerializeField] int enemyCount;
     [SerializeField] GameObject player;
+    [SerializeField] int enemyCount;
+
+    private float genInterval = 10.0f;
+    private int maxEnemies = 5;
+
     private Vector3 offset = new Vector3(0.0f, 0.0f, -10.0f);
 
-    private float genInterval = 3.0f;
+
 
 
     // Start is called before the first frame update
@@ -23,14 +27,11 @@ public class EnemySpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(interval);
 
-        GameObject newEnemy = Instantiate(enemy, player.transform.position - offset, player.transform.rotation);
-        StartCoroutine(SpawnEnemy(interval, enemy));
-    }
+        for(int i = 0; i < maxEnemies; i++)
+        {
+            GameObject newEnemy = Instantiate(enemy, player.transform.position - offset, player.transform.rotation);
+            StartCoroutine(SpawnEnemy(interval, enemy));
+        }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
