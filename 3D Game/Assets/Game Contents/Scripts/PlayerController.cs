@@ -40,16 +40,13 @@ public class PlayerController : MonoBehaviour
 
         if (IsOnGround())
         {
-            // Move the vehicle
-            //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-            transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
-            playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+            MovePlayer();
         }
 
         // Make the car jump for a fun effect
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRB.velocity = new Vector3(playerRB.velocity.x, jumpForce, playerRB.velocity.z);
+            JumpPlayer();
         }
     }
 
@@ -72,5 +69,18 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    void MovePlayer()
+    {
+        // Move the vehicle
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+        playerRB.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+    }
+
+    void JumpPlayer()
+    {
+        playerRB.velocity = new Vector3(playerRB.velocity.x, jumpForce, playerRB.velocity.z);
     }
 }
