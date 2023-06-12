@@ -6,7 +6,6 @@ public class EnemyCarController : MonoBehaviour
 {
     private Rigidbody enemyRB;
     private GameObject player;
-    private float forwardDirectionalPower = 100.0f;
     [SerializeField] private float horsePower = 2500;
 
     // Start is called before the first frame update
@@ -34,7 +33,7 @@ public class EnemyCarController : MonoBehaviour
         RotateTowardsEnemy();
 
         // Move towards enemy
-        enemyRB.AddRelativeForce(Vector3.forward * horsePower * forwardDirectionalPower);
+        enemyRB.AddRelativeForce(Vector3.forward * horsePower);
     }
 
     void RotateTowardsEnemy()
