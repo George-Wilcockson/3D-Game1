@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCarController : MonoBehaviour
 {
-    float speed;
+    float speed = 1000.0f;
     private Rigidbody enemyRB;
     private GameObject player;
 
