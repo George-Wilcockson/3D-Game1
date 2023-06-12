@@ -19,19 +19,19 @@ public class EnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy(genInterval, enemyPrefab));
+            StartCoroutine(SpawnEnemy(genInterval, enemyPrefab));
     }
 
 
     private IEnumerator SpawnEnemy(float interval, GameObject enemy)
     {
+        enemyCount++;
         yield return new WaitForSeconds(interval);
 
-        for(int i = 0; i < maxEnemies; i++)
+        if (enemyCount <= 6)
         {
             GameObject newEnemy = Instantiate(enemy, player.transform.position - offset, player.transform.rotation);
             StartCoroutine(SpawnEnemy(interval, enemy));
         }
-
     }
 }
