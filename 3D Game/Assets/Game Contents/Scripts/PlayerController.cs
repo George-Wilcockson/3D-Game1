@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10;
 
 
+    // Variable to score
+    public Scoring score;
 
 
 
@@ -88,19 +90,18 @@ public class PlayerController : MonoBehaviour
         playerRB.velocity = new Vector3(playerRB.velocity.x, jumpForce, playerRB.velocity.z);
     }
 
-
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Star"))
+        if (other.gameObject.CompareTag("Star"))
         {
             Debug.Log("POINT SCORED");
+            //score.AddScore(1);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit!");
-            Destroy(other.gameObject);
         }
     }
 }

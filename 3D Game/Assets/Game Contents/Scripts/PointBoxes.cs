@@ -24,4 +24,6 @@ public class PointBoxes : MonoBehaviour
         }
 
     }
+
+
 }
