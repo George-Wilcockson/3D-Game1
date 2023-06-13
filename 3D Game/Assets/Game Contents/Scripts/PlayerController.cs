@@ -94,6 +94,13 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Star"))
         {
             Debug.Log("POINT SCORED");
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit!");
+            Destroy(other.gameObject);
         }
     }
 }
