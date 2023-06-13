@@ -22,5 +22,6 @@ public class PointBoxes : MonoBehaviour
         {
             score.AddScore(1);
         }
+
     }
 }

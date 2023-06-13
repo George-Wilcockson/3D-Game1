@@ -87,4 +87,13 @@ public class PlayerController : MonoBehaviour
     {
         playerRB.velocity = new Vector3(playerRB.velocity.x, jumpForce, playerRB.velocity.z);
     }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Star"))
+        {
+            Debug.Log("POINT SCORED");
+        }
+    }
 }
