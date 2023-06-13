@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GlobalTime : MonoBehaviour
 {
@@ -12,11 +13,21 @@ public class GlobalTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (deductingTime == false)
+        // To be implemented when I have a high score scene
+        /*if (seconds == 0)
         {
-            deductingTime = true;
-            StartCoroutine(DeductSecond());
+            seconds = 0;
+            SceneManager.LoadScene();
         }
+        else
+        { */
+            if (deductingTime == false)
+            {
+                deductingTime = true;
+                StartCoroutine(DeductSecond());
+            }
+        // }
+
     }
 
     IEnumerator DeductSecond()
