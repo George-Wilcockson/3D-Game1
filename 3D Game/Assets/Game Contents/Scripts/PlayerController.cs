@@ -95,13 +95,14 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Star"))
         {
             Debug.Log("POINT SCORED");
-            score.AddScore(1);
+            score.AddScore(10);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit!");
+            score.AddScore(-1);
         }
     }
 }
